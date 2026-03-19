@@ -1,0 +1,17 @@
+[workspace]
+authors = ["Mahdi_Saraeian <saraeian.mahdi@gmail.com>"]
+channels = ["conda-forge"]
+name = "WordCount"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+cli = "python generate_wordcloud.py"
+ui = "python generate_wordcloud.py --ui"
+
+[dependencies]
+wordcloud = ">=1.9.6,<2"
+matplotlib = ">=3.10.8,<4"
+
+[pypi-dependencies]
+gradio = ">=6.9.0, <7"
