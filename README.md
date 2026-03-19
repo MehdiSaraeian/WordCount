@@ -2,6 +2,11 @@
 
 A Pythonic word cloud generator with both a CLI and a Gradio-based Web UI. Built using [Pixi](https://pixi.sh) for dependency management.
 
+## Demo
+
+![WordCount UI Demonstration](demo.gif)
+
+
 ## Features
 - **CLI Interface**: Process text files and generate word clouds/CSV frequencies from the terminal.
 - **Web UI**: User-friendly Gradio interface for uploading files and viewing results.

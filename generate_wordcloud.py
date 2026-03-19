@@ -1,6 +1,7 @@
 import argparse
 import csv
 import string
+import os
 from collections import Counter
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
@@ -83,20 +84,21 @@ def launch_ui():
 
     def ui_handler(file_obj):
         if file_obj is None:
-            return None, "Please upload a file first."
+            return None, None
         
         try:
             with open(file_obj.name, 'r', encoding='utf-8') as f:
                 text_content = f.read()
         except Exception as e:
-            return None, f"Error reading file: {e}"
+            print(f"Error reading file: {e}")
+            return None, None
         
-        output_png = "output_wordcloud.png"
-        output_csv = "output_frequencies.csv"
+        output_png = os.path.abspath("output_wordcloud.png")
+        output_csv = os.path.abspath("output_frequencies.csv")
         
         png_path, csv_path = process_workflow(text_content, output_png, output_csv)
         if png_path is None:
-            return None, "Error processing the text or generating the wordcloud."
+            return None, None
             
         return png_path, csv_path
 
