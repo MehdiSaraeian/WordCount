@@ -2,7 +2,7 @@
 authors = ["Mahdi_Saraeian <saraeian.mahdi@gmail.com>"]
 channels = ["conda-forge"]
 name = "WordCount"
-platforms = ["win-64"]
+platforms = ["win-64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
@@ -10,8 +10,11 @@ cli = "python generate_wordcloud.py"
 ui = "python generate_wordcloud.py --ui"
 
 [dependencies]
+python = ">=3.12, <3.13"
 wordcloud = ">=1.9.6,<2"
 matplotlib = ">=3.10.8,<4"
+packaging = ">=24"
+setuptools = "*"
 
 [pypi-dependencies]
 gradio = ">=6.9.0, <7"
